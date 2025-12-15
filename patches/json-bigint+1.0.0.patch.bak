@@ -1,0 +1,22 @@
+diff --git a/node_modules/json-bigint/lib/parse.js b/node_modules/json-bigint/lib/parse.js
+index 1c1acda..90707aa 100644
+--- a/node_modules/json-bigint/lib/parse.js
++++ b/node_modules/json-bigint/lib/parse.js
+@@ -205,1 +205,7 @@
+-        if (BigNumber == null) BigNumber = require('bignumber.js');
++        if (BigNumber == null) {
++          BigNumber = require('bignumber.js');
++          if (BigNumber && BigNumber.default) {
++            BigNumber = BigNumber.default;
++          }
++        }
+diff --git a/node_modules/json-bigint/lib/stringify.js b/node_modules/json-bigint/lib/stringify.js
+index 0b27032..7ed0cf1 100644
+--- a/node_modules/json-bigint/lib/stringify.js
++++ b/node_modules/json-bigint/lib/stringify.js
+@@ -1,1 +1,4 @@
+-var BigNumber = require('bignumber.js');
++var BigNumber = require('bignumber.js');
++if (BigNumber && BigNumber.default) {
++    BigNumber = BigNumber.default;
++}

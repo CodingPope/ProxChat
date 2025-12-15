@@ -1,0 +1,51 @@
+diff --git a/node_modules/react-native-agora/lib/commonjs/internal/RtcEngineExInternal.js b/node_modules/react-native-agora/lib/commonjs/internal/RtcEngineExInternal.js
+index 3e8c77f..f9d3560 100644
+--- a/node_modules/react-native-agora/lib/commonjs/internal/RtcEngineExInternal.js
++++ b/node_modules/react-native-agora/lib/commonjs/internal/RtcEngineExInternal.js
+@@
+-var _tsInterfaceChecker = require("ts-interface-checker");
+-var _Utils = require("../Utils");
+-var _IAgoraRtcEngineExImpl = require("../impl/IAgoraRtcEngineExImpl");
+-var _AgoraBaseTi = _interopRequireDefault(require("../ti/AgoraBase-ti"));
+-var _AgoraMediaBaseTi = _interopRequireDefault(require("../ti/AgoraMediaBase-ti"));
+-var _IAgoraRtcEngineTi = _interopRequireDefault(require("../ti/IAgoraRtcEngine-ti"));
++var _Utils = require("../Utils");
++var _IAgoraRtcEngineExImpl = require("../impl/IAgoraRtcEngineExImpl");
++var _AgoraBaseTi = _interopRequireDefault(require("../ti/AgoraBase-ti"));
++var _AgoraMediaBaseTi = _interopRequireDefault(require("../ti/AgoraMediaBase-ti"));
++var _IAgoraRtcEngineTi = _interopRequireDefault(require("../ti/IAgoraRtcEngine-ti"));
+@@
+-const checkers = (0, _tsInterfaceChecker.createCheckers)(_AgoraBaseTi.default, _AgoraMediaBaseTi.default, _IAgoraRtcEngineTi.default);
++const stubChecker = {
++  strictTest: () => false
++};
++const checkers = {
++  IRtcEngineEventHandler: stubChecker,
++  IDirectCdnStreamingEventHandler: stubChecker,
++  IMetadataObserver: stubChecker,
++  IAudioEncodedFrameObserver: stubChecker,
++  IAudioSpectrumObserver: stubChecker
++};
+diff --git a/node_modules/react-native-agora/lib/module/internal/RtcEngineExInternal.js b/node_modules/react-native-agora/lib/module/internal/RtcEngineExInternal.js
+index 7eaa35b..31bfb1a 100644
+--- a/node_modules/react-native-agora/lib/module/internal/RtcEngineExInternal.js
++++ b/node_modules/react-native-agora/lib/module/internal/RtcEngineExInternal.js
+@@
+-import { createCheckers } from 'ts-interface-checker';
+ import { parseIntPtr2Number } from '../Utils';
+ import { IRtcEngineExImpl } from '../impl/IAgoraRtcEngineExImpl';
+ import AgoraBaseTI from '../ti/AgoraBase-ti';
+ import AgoraMediaBaseTI from '../ti/AgoraMediaBase-ti';
+ import IAgoraRtcEngineTI from '../ti/IAgoraRtcEngine-ti';
+@@
+-const checkers = createCheckers(AgoraBaseTI, AgoraMediaBaseTI, IAgoraRtcEngineTI);
++const stubChecker = {
++  strictTest: () => false
++};
++const checkers = {
++  IRtcEngineEventHandler: stubChecker,
++  IDirectCdnStreamingEventHandler: stubChecker,
++  IMetadataObserver: stubChecker,
++  IAudioEncodedFrameObserver: stubChecker,
++  IAudioSpectrumObserver: stubChecker
++};
