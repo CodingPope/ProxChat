@@ -22,14 +22,14 @@ import { createLogger } from '../../shared/logging';
 
 const log = createLogger('FirebaseProvider');
 
-// Firebase configuration from GoogleService-Info.plist
+// Firebase configuration from environment variables
 const firebaseConfig = {
-  apiKey: 'AIzaSyAd5A3FNDaCEFXvBNCSTuhU7O7c4rzqWvE',
-  authDomain: 'proxchat-b0f95.firebaseapp.com',
-  projectId: 'proxchat-b0f95',
-  storageBucket: 'proxchat-b0f95.firebasestorage.app',
-  messagingSenderId: '135465541188',
-  appId: '1:135465541188:ios:51c3d17bbdda0d5ef4e611',
+  apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID,
 };
 
 let app: FirebaseApp;
